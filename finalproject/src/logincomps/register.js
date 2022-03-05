@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import './Register.css';
 
 export default function Form() {
 
@@ -82,7 +83,7 @@ return (
 		{successMessage()}
 	</div>
 
-	<form>
+	<form className='left'>
 		{/* Labels and inputs for form data */}
 		<label className="label">Name</label>
 		<input onChange={handleName} className="input"
