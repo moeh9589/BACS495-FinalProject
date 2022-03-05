@@ -42,7 +42,7 @@ class App extends Component  {
               <p></p>
               <button onClick={this.callAPI}>Call API</button>
 
-              <p>Test call: {this.state.apiResponse}</p>
+              <p>{this.state.apiResponse}</p>
               <Footer/>
           </div>
 
