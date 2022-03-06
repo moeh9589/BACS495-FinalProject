@@ -1,53 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
-import Header from './header';
-import Footer from './footer';
 import RegisterBody from './registerbody.js';
-import Login from './logincomps/login';
-import Register from './logincomps/register'
-import React, { Component } from 'react';
-
-class App extends Component  {
-
-    constructor(props) {
-      super(props);
-      this.state = {apiResponse: " " };
-
-    }
+import React from 'react';
+import Body from './body';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 
-    callbutton() {
-      this.callAPI();
-    }
-    // componentDidMount() {
-
-    //     this.callAPI();
-    // }
-
-     callAPI () {
-     fetch('http://localhost:9000/users', { method: 'GET' } )
-      .then(res=> res.json())
-      .then(res=> this.setState({apiResponse : res}))
-      // .then(res => alert(JSON.stringify(res)))
-      .catch(err => err);
-
-    }
-
-
-
-    render () {
-        return (
-          <div>       
-              <Header />
-              <p></p>
-              <button onClick={this.callAPI}>Call API</button>
-
-              <p>{this.state.apiResponse}</p>
-              <Footer/>
-          </div>
-
-        );
-    }
+function App() {
+    return (
+      <Body/>
+      // <Router>
+      //   <Routes>
+      //     <Route path = '/' element = {<Body/>} />
+      //     <Route path = '/register' element = {<RegisterBody />} />
+      //   </Routes>
+      // </Router>
+    );
 }
 
 export default App;
