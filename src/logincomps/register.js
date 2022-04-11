@@ -1,12 +1,31 @@
-import { useState } from 'react';
+import React, {useState, useEffect} from 'react';
 import './Register.css';
 
-export default function Form() {
+export default function Form(props) {
 
 // States for registration
 const [name, setName] = useState('');
 const [email, setEmail] = useState('');
 const [password, setPassword] = useState('');
+
+const createUser = (e) => {
+	var insert = {'name' : name, 'email' : email, 'password' : password}
+	fetch ("http://localhost:9000/users",
+	{
+		method:'POST',
+		body: JSON.stringify(insert),
+            headers: {
+            "Content-Type": "application/json; charset=utf-8",
+            }
+        
+	}
+	
+	)
+	.then(res => res.json())
+	.then(data => console.log(data))
+props.notifyParent();
+handleSubmit();
+}
 
 // States for checking the errors
 const [submitted, setSubmitted] = useState(false);
@@ -38,14 +57,14 @@ const handleSubmit = (e) => {
 	} else {
 	setSubmitted(true);
 	setError(false);
+	createUser(e);
 	}
 };
 
 // Showing success message
 const successMessage = () => {
-    fetch('http://localhost:9000/users', {
-        method: 'POST',
-      })
+
+
 
 	return (
 	<div

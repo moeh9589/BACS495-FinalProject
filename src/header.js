@@ -5,7 +5,7 @@ import RegisterBody from './registerbody'
 function Header() {
   return (
     <div className='Header'>
-      <h1>Header</h1>
+      <h1>Header name</h1>
       <RegisterBody/>
     </div>
   )

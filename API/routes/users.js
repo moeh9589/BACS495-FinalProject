@@ -78,22 +78,17 @@ router.put('/:id/:updatedname', function(req, res, next) {
 //res.send("Cannot find user");
 });
 
-router.post('/:id/:name', function(req, res, next) {
-  var inlist = false;
-  var id = req.params.id;
-
-  for (let user of users) {
-      if (id == user.id) {
-          inlist = true;
-          res.send("Id found in list of users. Need a unique ID");
-      }
+router.post('/', function(req, res, next) {
+  const user = {
+    'name': req.body.name,
+    'email': req.body.email,
+    'password': req.body.password
   }
+  console.log(user);
 
-  if (!inlist) {
-      const user = new User(req.params.id, req.params.name);
-      users.push(user);
-      res.send("user added");
-  }
+  var db = req.app.locals.db;
+  db.collection('users').insertOne(user);
+  res.json({"message": "User inserted"});
 
 });
 
