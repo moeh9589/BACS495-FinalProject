@@ -5,12 +5,14 @@ import './index.css';
 import App from './App';
 import Register from "./logincomps/register"
 import reportWebVitals from './reportWebVitals';
+import Question from './question';
 
 ReactDOM.render(
 <BrowserRouter>
        <Routes>
         <Route exact path="/" element={<App/>} />
         <Route path="/register" element={<Register/>} />
+        <Route path="/question" element={<Question/>} />
       </Routes>
       </BrowserRouter>,
   document.getElementById('root')

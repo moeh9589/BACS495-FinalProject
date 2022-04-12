@@ -3,6 +3,7 @@ import Post from './Post';
 import Header from './header';
 import Footer from './footer';
 import './body.css';
+import {Link } from "react-router-dom";
 
 class Body extends Component {
     constructor(props) {
@@ -44,6 +45,13 @@ class Body extends Component {
                 <Header />
                 <div>   
                     <p>{postslist}</p>
+                </div>
+
+                <div>
+                  <Link to="question"><button>
+                    New Question
+                  </button>
+                  </Link>
                 </div>
                 <Footer/>
             </div>
