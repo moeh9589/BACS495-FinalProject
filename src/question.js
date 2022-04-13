@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-
+import Backbutton from './backbutton';
 
 export default function Question(props) {
     const [subject, setSubject] = useState('');
@@ -88,6 +88,8 @@ const errorMessage = () => {
 };
 
 return (
+    <div>
+        <Backbutton/>
     <div className="form">
     <div>
         <h1> New Question </h1>
@@ -117,6 +119,7 @@ return (
         Submit
         </button>
     </form>
+    </div>
     </div>
     );
 }
