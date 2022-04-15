@@ -28,6 +28,11 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/posts', postsRouter);
 app.use('/questions', questionsRouter);
+app.use('/login', (req, res) => {
+  res.send({
+    token: 'test123'
+  });
+});
 // app.use("/", testAPIRouter);
 
 // catch 404 and forward to error handler
@@ -45,5 +50,4 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
 module.exports = app;
