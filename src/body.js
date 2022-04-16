@@ -47,7 +47,7 @@ class Body extends Component {
         
           return (
             <div >   
-                <Header />
+                <Header name = "Home Page"/>
                 {/* <div>   
                     <p>{postslist}</p>
                 </div> */}

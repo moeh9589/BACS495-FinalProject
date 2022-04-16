@@ -6,14 +6,17 @@ import App from './App';
 import Register from "./logincomps/register"
 import reportWebVitals from './reportWebVitals';
 import Question from './question';
-import Body from './body'
+import Body from './body';
+import Welcome from './welcomepage';
+
 ReactDOM.render(
 <BrowserRouter>
        <Routes>
-        <Route exact path="/" element={<App/>} />
+        <Route exact path="/" element={<Welcome/>} />
         <Route path="/register" element={<Register/>} />
         <Route path="/question" element={<Question/>} />
         <Route path="/body" element={<Body/>} />
+        <Route path="/login" element={<App/>} />
       </Routes>
       </BrowserRouter>,
   document.getElementById('root')

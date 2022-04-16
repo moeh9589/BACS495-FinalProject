@@ -2,11 +2,10 @@ import React from 'react'
 import './header.css'
 import RegisterBody from './registerbody'
 
-function Header() {
+function Header(props) {
   return (
     <div className='Header'>
-      <h1>Header name</h1>
-      <RegisterBody/>
+      <h1>{props.name}</h1>
     </div>
   )
 }
