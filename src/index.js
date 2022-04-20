@@ -14,7 +14,7 @@ ReactDOM.render(
        <Routes>
         <Route exact path="/" element={<Welcome/>} />
         <Route path="/register" element={<Register/>} />
-        <Route path="/question" element={<Question/>} />
+        <Route path="login/question" element={<Question/>} />
         <Route path="/body" element={<Body/>} />
         <Route path="/login" element={<App/>} />
       </Routes>

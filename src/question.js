@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import Backbutton from './backbutton';
+import { v4 as uuidv4 } from "uuid";
 
 export default function Question(props) {
     const [subject, setSubject] = useState('');
@@ -8,7 +9,9 @@ export default function Question(props) {
 
     const createQuestion = (e) => {
         console.log("$$$$$$$$$$$$$$$");
-        var insert = {'subject': subject, 'qbody': qbody, 'answer': answer}
+        var id = uuidv4();
+        var votes = 0;
+        var insert = {'id': id, 'subject': subject, 'qbody': qbody, 'answer': answer, "votes":votes}
 
         fetch ("http://localhost:9000/questions",
         {
@@ -111,9 +114,9 @@ return (
         <input onChange={handleqBody} className="input"
         value={qbody} type="text" />
     
-        <label className="label">Answer:</label>
+        {/* <label className="label">Answer:</label>
         <input onChange={handleAnswer} className="input"
-        value={answer} type="text" />
+        value={answer} type="text" /> */}
     
         <button onClick={handleSubmit} className="btn" type="submit">
         Submit
