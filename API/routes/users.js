@@ -2,9 +2,9 @@ var express = require('express');
 var router = express.Router();
 
 class User {
-  constructor(id, name, password) {
+  constructor(id, username, password) {
     this.id = id;
-    this.name = name;
+    this.username = username;
     this.password = password;
   }
 }
@@ -18,24 +18,27 @@ for (let i = 0; i < 3; i++) {
 
 
 router.get('/', function(req, res, next) {
-  res.send(users);
-
-  for (let user of users) {
-    console.log(user.id, user.name, user.password);
-  }
+  var db = req.app.locals.db;
+  var cursor = db.collection("users").find();
+  cursor.toArray().then(c => res.json(c));
 });
 
 
 router.get('/:id', function(req, res, next) {
-var id = req.params.id;
-
-for (let user of users) {
-  if (user.id == id) {
-    res.json(user);
-    console.log(user.name + " " + user.id);
-  }
-}
-res.send("Cannot find user");
+    var db = req.app.locals.db;
+    var id = req.params.id;
+    console.log(id);
+    const query = {'id': id};
+    db.collection("users")
+      .findOne(query)
+      .then(result => {
+        console.log(`Got user ${result}`);
+        res.json(result);
+      })
+      .catch(err=>{
+        console.log(`Error: ${err}`);
+      });
+    
 });
 
 
