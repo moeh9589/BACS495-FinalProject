@@ -185,3 +185,10 @@ p.up {
     margin-left:7vw;
     margin-right:1vw
 }
+
+.upleft2:empty {
+    content: "0";
+    margin-top:-1.65em;
+    margin-left:4em;
+
+}

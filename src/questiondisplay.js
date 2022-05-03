@@ -7,7 +7,6 @@ import {Link } from "react-router-dom";
 function QuestionDisplay(props) {
     const [update, setUpdate] = useState(0);
     const [answer, setAnswer] = useState('');
-
     useEffect(() => {
         fetch(process.env.REACT_APP_API_URL + "/questions")  
             .then(res => res.json())

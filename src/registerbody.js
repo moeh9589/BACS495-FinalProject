@@ -1,7 +1,7 @@
 import React from  "react";
 import {Link } from "react-router-dom";
 import './registerbody.css'
-import bg from './images/bg.jpeg';
+
 
 function RegisterBody() {
     return (

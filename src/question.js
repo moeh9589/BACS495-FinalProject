@@ -1,11 +1,11 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import Backbutton from './backbutton';
 import { v4 as uuidv4 } from "uuid";
 
 export default function Question(props) {
     const [subject, setSubject] = useState('');
     const [qbody, setqBody] = useState('');
-    const [answer, setAnswer] = useState('');
+    const [answer] = useState('');
 
     const createQuestion = (e) => {
         console.log("$$$$$$$$$$$$$$$");
@@ -44,11 +44,6 @@ const handleqBody = (e) => {
     setSubmitted(false);
 };
 
-// Handling the password change
-const handleAnswer = (e) => {
-    setAnswer(e.target.value);
-    setSubmitted(false);
-};
 
 // Handling the form submission
 const handleSubmit = (e) => {
@@ -72,7 +67,7 @@ const successMessage = () => {
         style={{
         display: submitted ? '' : 'none',
         }}>
-        <h1>Post successfully submitted!!</h1>
+        <h1>Question successfully submitted!!</h1>
     </div>
     );
 };
@@ -112,12 +107,7 @@ return (
             value={subject} type="text" />
         
             <label className="label">Body</label>
-            <input onChange={handleqBody} className="input"
-            value={qbody} type="text" />
-        
-            {/* <label className="label">Answer:</label>
-            <input onChange={handleAnswer} className="input"
-            value={answer} type="text" /> */}
+            <input onChange={handleqBody} className="input" value={qbody} type="text" />
         
             <button onClick={handleSubmit} className="button1" type="submit">
             Submit

@@ -9,9 +9,7 @@ class Post extends Component {
             body: props.body,
         };
     }
-
-
-
+    
     render() {
         return (
             <div className='container'>

@@ -1,9 +1,6 @@
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
 import "./Register.css";
 import Backbutton from "../backbutton";
 import PropTypes from 'prop-types';
-import setToken from '../useToken.js';
 import React, {useState, useEffect} from 'react';
 
 
@@ -11,7 +8,7 @@ async function loginUser(credentials, users) {
   for (var i = 0; i < users.length; i++) {
     console.log("test"+users[i].name +"\n");
   
-    if (String(credentials.username) == (String(users[i].name))  && String(credentials.password) == (String(users[i].password))) {
+    if (String(credentials.username) === (String(users[i].name))  && String(credentials.password) === (String(users[i].password))) {
       console.log("success!!");
     
       return fetch('http://localhost:9000/login', {
@@ -38,9 +35,8 @@ async function loginUser(credentials, users) {
 export default function Login({ setToken }) {
   const [users, setUsers] = useState([]);
   const [username, setUserName] = useState();
-  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [update, setUpdate] = useState(0);
+  const [update] = useState(0);
 
   useEffect(() => {
     fetch("http://localhost:9000/users")  
@@ -48,11 +44,6 @@ export default function Login({ setToken }) {
     .then(data => setUsers(data))
 }, [update])
 
-
-
-  function validateForm() {
-    return email.length > 0 && password.length > 0;
-  }
 
   const handleSubmit = async event => {
     event.preventDefault();
