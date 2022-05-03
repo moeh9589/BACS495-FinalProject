@@ -1,70 +1,10 @@
-# Getting Started with Create React App
+This project was creating using ReactJS connected to an ExpressJS API and a MongoDB backend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Once in the "bacs495-finalproject" directory, npm start can be used to start the react side of the app. This part is set to run on port 3000.
+To run the API part of the app, navigate into the API folder which is inside the bacs495-finalproject directory. From there npm start can be run to start it. This part is set to run on port 9000.
 
-## Available Scripts
+The mongodb connection can be found on line 24 of the 'www' file located in the bin folder in the API folder.
 
-In the project directory, you can run:
+One bug that I couldn't resolve was within the login. When a user enters wrong information, even if the system checks for it, when the user tries to submit the information again, the screen blanks out and the app would have to be restarted. So it is suggested that the correct login be entered when logging in.
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Users have the ability to register and login. Once registered and logged in correctly, the app generates a token which is stored in system storage so the user doesn't have to enter their information again if they somehow end up on the login page again. Upon starting the app, the user is required to register or login, and the token won't be generated unless the user is logged in. The home page will not load until the token is generated. Once on the home page the user has the ability to view all previously asked questions and can ask their own using the button that is at the top. Inside each question, there is also space for the user to answer the question. Once the user answers the question, the previous answer gets overwritten and their answer will appear inside the answer space upon the refreshing of the page. There is also a voting button at the bottom of each question. The page does have to be refreshed in order for the current votes to be updated. Each question is dispayed in its own card, styled appropriately so each question is distinct from the others. Long questions and long answers both can be handled - the card allows for scrolling if the current space would be exceeded.
