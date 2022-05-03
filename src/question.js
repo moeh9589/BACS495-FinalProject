@@ -91,38 +91,40 @@ const errorMessage = () => {
 };
 
 return (
-    <div>
-        <Backbutton/>
-    <div className="form">
-    <div>
-        <h1> New Question </h1>
-    </div>
-    
-      {/* Calling to the methods */}
-    <div className="messages">
-        {errorMessage()}
-        {successMessage()}
-    </div>
-    
-    <form className='left'>
-        {/* Labels and inputs for form data */}
-        <label className="label">Subject</label>
-        <input onChange={handleSubject} className="input"
-        value={subject} type="text" />
-    
-        <label className="label">Body</label>
-        <input onChange={handleqBody} className="input"
-        value={qbody} type="text" />
-    
-        {/* <label className="label">Answer:</label>
-        <input onChange={handleAnswer} className="input"
-        value={answer} type="text" /> */}
-    
-        <button onClick={handleSubmit} className="btn" type="submit">
-        Submit
-        </button>
-    </form>
-    </div>
+    <div className='padleft'>
+        <div>
+            <Backbutton/>
+        <div className="form">
+        <div>
+            <h1> New Question </h1>
+        </div>
+        
+        {/* Calling to the methods */}
+        <div className="messages">
+            {errorMessage()}
+            {successMessage()}
+        </div>
+        
+        <form className='left'>
+            {/* Labels and inputs for form data */}
+            <label className="label">Subject</label>
+            <input onChange={handleSubject} className="input"
+            value={subject} type="text" />
+        
+            <label className="label">Body</label>
+            <input onChange={handleqBody} className="input"
+            value={qbody} type="text" />
+        
+            {/* <label className="label">Answer:</label>
+            <input onChange={handleAnswer} className="input"
+            value={answer} type="text" /> */}
+        
+            <button onClick={handleSubmit} className="button1" type="submit">
+            Submit
+            </button>
+        </form>
+        </div>
+        </div>
     </div>
     );
 }
