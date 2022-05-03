@@ -1,6 +1,6 @@
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import "./Login.css";
+import "./Register.css";
 import Backbutton from "../backbutton";
 import PropTypes from 'prop-types';
 import setToken from '../useToken.js';
@@ -22,6 +22,10 @@ async function loginUser(credentials, users) {
         body: JSON.stringify(credentials)
       })
         .then(data => data.json())
+    }
+    else {
+      console.log("unsuccessful login");
+      
     }
     console.log(users[i]);
     }
@@ -73,19 +77,20 @@ export default function Login({ setToken }) {
     setToken(token);
   }
   return(
-    <div className="login-wrapper">
+    <div className="padleft">
+      <Backbutton/>
       <h1>Please Log In</h1>
       <form onSubmit={handleSubmit}>
         <label>
           <p>Username</p>
-          <input type="text" onChange={e => setUserName(e.target.value)}/>
+          <input className="input" type="text" onChange={e => setUserName(e.target.value)}/>
         </label>
         <label>
           <p>Password</p>
-          <input type="password" onChange={e => setPassword(e.target.value)}/>
+          <input className="input" type="password" onChange={e => setPassword(e.target.value)}/>
         </label>
         <div>
-          <button type="submit">Submit</button>
+          <button className="button1" type="submit">Submit</button>
         </div>
       </form>
     </div>

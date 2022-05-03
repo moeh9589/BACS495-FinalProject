@@ -92,7 +92,7 @@ const errorMessage = () => {
 };
 
 return (
-	<div>
+	<div className='padleft'>
 		<Backbutton/>
 	<div className="form">
 	<div>
@@ -107,7 +107,7 @@ return (
 
 	<form className='left'>
 		{/* Labels and inputs for form data */}
-		<label className="label">Name</label>
+		<label className="label">Username</label>
 		<input onChange={handleName} className="input"
 		value={name} type="text" />
 
@@ -118,10 +118,12 @@ return (
 		<label className="label">Password</label>
 		<input onChange={handlePassword} className="input"
 		value={password} type="password" />
+		<div>
+			<button onClick={handleSubmit} className="button1" type="submit">
+			Submit
+			</button>
+		</div>
 
-		<button onClick={handleSubmit} className="btn" type="submit">
-		Submit
-		</button>
 	</form>
 	</div>
 	</div>

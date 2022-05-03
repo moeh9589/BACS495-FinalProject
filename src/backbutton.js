@@ -7,7 +7,7 @@ function Backbutton() {
     return(
         <div>
             <>
-                <button onClick={() => navigate(-1)}>
+                <button className="button" onClick={() => navigate(-1)}>
                     Back
                 </button>
             </>

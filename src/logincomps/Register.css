@@ -14,6 +14,9 @@
     font-size: larger;
     padding: 5px;
     margin: 2px;
+    min-width:15em;
+    max-width: 15em;
+    max-height: 2em;
     
     }
     .btn{
@@ -53,3 +56,21 @@
         justify-content: left;
     }
     
+.padleft {
+    margin-top:2em;
+    margin-left:2em
+}
+
+.button1 {
+    color: white;
+    background-color: rgb(77, 138, 191);
+    border-radius: 5px;
+    font-size: larger;
+    display: block;
+    margin-bottom:5px;
+    margin-top:0.5em
+}
+
+.button1:hover {
+    background-color: rgb(56, 101, 141);
+}

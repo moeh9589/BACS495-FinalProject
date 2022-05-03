@@ -1,21 +1,30 @@
 .Header {
-    width: 100%;
+    width: 100vw;
     display: flex;
     margin-bottom: 2em;
-    background-color: rgb(226, 226, 226);
-    color: rgb(5, 2, 39);
-    position: fixed;
-    height:4em;
-    position:relative;
+    background-color: rgb(2,7,27);
+    color: rgb(77, 138, 191);
+    position: relative;
+    min-height:5vw;
+    max-height: 10vw;
+
     border-style:solid;
-    border-color: #28ce83;
+    border-color: rgb(77, 138, 191);
+    max-width:98.7vw;
+    font-size:calc(4px + 1vw);
   }
 
-  h1 {
-    margin-left:1em;
+  .h1_ {
+    margin-left:2em;
   }
 
   .buttons {
     justify-content: right;
   }
 
+  .div2 {
+    width: 35px;
+    height: 5px;
+    background-color: black;
+    margin: 6px 0;
+  }

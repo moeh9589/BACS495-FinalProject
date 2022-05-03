@@ -1,10 +1,23 @@
 .Footer{
     margin-top: 1rem;
     padding: 1rem;
+    padding-right:-1rem;
     background-color: rgb(2, 7, 27);
     color:rgb(77, 138, 191);
-    position:relative;
+    position:absolute;
     bottom: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
+    min-height:4vw;
+    max-height: 10vw;
+    font-size: 1vw;
+    border-style:solid;
+    border-color: rgb(77, 138, 191);
+    max-width:10vw;
+
+  }
+
+  .place {
+    margin-bottom:1em;
+    text-align: center;
   }

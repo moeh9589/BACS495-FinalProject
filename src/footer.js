@@ -4,7 +4,8 @@ import './footer.css'
 function Footer() {
   return (
     <div className='Footer'>
-      <h1>Footer</h1>
+      <div className='place'></div>
+      <p className='place'>Site design © 2022 Justin Moehlenaph Inc; user contributions licensed under no one. version 1.1.2</p>
 
     </div>
   )

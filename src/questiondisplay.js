@@ -1,6 +1,7 @@
 import './post.css';
 import React, {useState, useEffect} from 'react';
 
+import {Link } from "react-router-dom";
 
 
 function QuestionDisplay(props) {
@@ -21,12 +22,12 @@ function QuestionDisplay(props) {
                 method:'PUT', 
                 body: JSON.stringify(updatequestion),
                 headers: {
-                  "Content-Type": "application/json; charset=utf-8",
+                    "Content-Type": "application/json; charset=utf-8",
                 }
             })  
-          .then(res => res.json())
-          .then(setUpdate(update + 1))
-          .then(console.log("finished"))
+            .then(res => res.json())
+            .then(setUpdate(update + 1))
+            .then(console.log("finished"))
     }
 
     const answerQuestion = (id, answer) => {
@@ -53,24 +54,31 @@ function QuestionDisplay(props) {
 
     return (
     <div>
-        <h1>Here is the list of current questions in the database</h1><br/>
-        <div>   
+        <h1 className='h1__'>Welcome to JustInCase! Feel free to ask any question or answer one if you feel you're smart enough...</h1><br/>
+        <Link to="question"><button className='btn3'>
+        Ask a Question                  
+        </button>
+        </Link>
+        <div className=''>   
             {props.questions.map(u => 
             <div className='box'>
-                <button value="Vote" onClick={() => voteQuestion(u.id, u.votes)}>Vote</button> 
-                <p> Votes: {u.votes}</p>
-                <p>ID {u.id}</p>
-                <h1>Subject:{u.subject}</h1>
-                <p>body-{u.qbody}</p>
-                <p>Answer This Question: </p>
-                <input onChange={handleAnswer} className="input"
-                value={answer} type="text" />
-                <button value="Answer" onClick={() => answerQuestion(u.id, answer)}> Answer Question</button>
-                <p> Current answers:</p>
-                <p>{u.answer}</p>
-                
-            
-            </div>)}     
+                <div className='child'>
+                    <h1 className='h11'>Subject: {u.subject}</h1>
+                    <div className='dark'>
+                        <p className='up'>{u.qbody}</p> 
+                    </div>          
+                    <input onChange={handleAnswer} className="input1" placeholder='Answer here' value={answer} type="text" />
+                    <button className='btn1' value="Answer" onClick={() => answerQuestion(u.id, answer)}> Submit Answer</button>
+                    <h1 className='h11'> Current Answer:</h1>
+                    <div className='dark'> 
+                    <p className='up'>{u.answer}</p>
+                    </div>
+                    
+                    <button className='btn2' value="Vote" onClick={() => voteQuestion(u.id, u.votes)}>Vote</button> 
+                    <p className='upleft'> Votes: {u.votes}</p>
+                </div>  
+            </div>
+            )}     
         </div>
     </div>
     );

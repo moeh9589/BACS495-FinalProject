@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Post from './Post';
 import Header from './header';
 import Footer from './footer';
-import './body.css';
+// import './body.css';
 import {Link } from "react-router-dom";
 import Questions from './questionlist';
 
@@ -47,18 +47,17 @@ class Body extends Component {
         
           return (
             <div >   
-                <Header name = "Home Page"/>
+                <Header name = "JustInCase"/>
                 {/* <div>   
                     <p>{postslist}</p>
                 </div> */}
+
+
                 <div>
                   <Questions/>
                 </div>
                 <div>
-                  <Link to="question"><button>
-                    New Question
-                  </button>
-                  </Link>
+
                 </div>
                 <Footer/>
             </div>
